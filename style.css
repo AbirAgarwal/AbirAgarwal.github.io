@@ -120,3 +120,86 @@ button{font:inherit;color:inherit;cursor:pointer;border:0}.hidden{display:none!i
 .featured-build{display:block;text-decoration:none;color:inherit;cursor:pointer;transition:transform .2s,border-color .2s}.featured-build:hover{transform:translateY(-3px);border-color:var(--cyan)}
 .email-display{font:11px 'DM Mono';color:#8298bd;margin-top:16px}
 @media(max-width:760px){.single-project{grid-template-columns:1fr}}
+
+/* v8: dedicated mobile layout — prevent desktop shortcuts from overlapping the home hero */
+@media (max-width: 760px) {
+  html, body {
+    height: auto;
+    min-height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  .desktop {
+    height: auto;
+    min-height: 100svh;
+    overflow: visible;
+    padding-bottom: 100px;
+  }
+  .topbar {
+    position: sticky;
+    top: 0;
+    height: 58px;
+    padding: 0 14px;
+    gap: 10px;
+  }
+  .top-left { min-width: 0; gap: 9px; }
+  .top-left .brand { white-space: nowrap; }
+  .top-left .top-divider,
+  .top-left .top-menu,
+  .top-center,
+  .top-right .wifi,
+  .top-right #topDate,
+  .top-right .top-divider { display: none; }
+  .top-right { margin-left: auto; gap: 8px; white-space: nowrap; }
+  .top-right #topClock { font-size: 9px; }
+  .desktop-icons {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: auto;
+    margin: 24px 18px 0;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px 10px;
+    z-index: 2;
+  }
+  .desk-icon { min-width: 0; font-size: 11px; }
+  .desk-glyph { width: 48px; height: 48px; border-radius: 14px; }
+  .home-hero {
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    display: block;
+    height: auto;
+    min-height: 0;
+    margin: 42px 22px 28px;
+    z-index: 1;
+  }
+  .hero-copy { padding: 0; max-width: none; }
+  .hero-copy .widget-kicker { font-size: 8px; letter-spacing: 1.1px; }
+  .hero-overline { margin-top: 24px; }
+  .hero-copy h1 { font-size: clamp(48px, 13vw, 64px); line-height: .98; letter-spacing: -4px; }
+  .hero-description { font-size: 13px; line-height: 1.75; }
+  .hero-copy .widget-tags { display: flex; flex-wrap: wrap; gap: 7px; }
+  .widget-tags span { font-size: 8px; padding: 8px 9px; }
+  .hero-actions { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; margin-top: 22px; }
+  .hero-primary { max-width: 100%; }
+  .hero-foot { display: flex; flex-wrap: wrap; gap: 10px 18px; font-size: 8px; line-height: 1.7; margin-top: 22px; }
+  .hero-art, .home-status-strip, .desktop-hint { display: none; }
+  .dock {
+    position: fixed;
+    bottom: max(10px, env(safe-area-inset-bottom));
+    left: 50%;
+    z-index: 100;
+    max-width: calc(100vw - 24px);
+    height: 62px;
+    gap: 5px;
+    padding: 7px 8px;
+  }
+  .dock button { flex: 0 1 42px; width: 42px; height: 44px; }
+  .dock-spacer, .dock-now { display: none; }
+  .launcher { position: fixed; left: 4%; width: 92%; bottom: 84px; }
+  .window { position: fixed; width: 92vw !important; height: min(68vh, 620px) !important; left: 4% !important; top: 14% !important; }
+}
