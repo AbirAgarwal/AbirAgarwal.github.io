@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ABIR.OS — Desktop</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="boot" class="boot">
+  <div class="boot-mark">A<span>.</span></div>
+  <div class="boot-name">ABIR<span>.OS</span></div>
+  <div class="boot-sub">PERSONAL DEVELOPER ENVIRONMENT</div>
+  <div class="boot-track"><i></i></div>
+  <div class="boot-status" id="bootStatus">INITIALIZING WORKSPACE</div>
+</div>
+
+<main id="desktop" class="desktop hidden">
+  <div class="wallpaper-grid"></div>
+  <div class="wallpaper-glow glow-a"></div><div class="wallpaper-glow glow-b"></div>
+  <header class="topbar">
+    <div class="top-left"><div class="mini-logo">A</div><span class="brand">ABIR<span>.OS</span></span><span class="top-divider"></span><button class="top-menu" id="appsButton">◈ Applications</button></div>
+    <div class="top-center"><span class="live-dot"></span> PERSONAL WORKSPACE <span class="slash">/</span> DEVELOPER MODE</div>
+    <div class="top-right"><span class="wifi">◉</span><span id="topDate">FRI, OCT 30</span><span class="top-divider"></span><span id="topClock">11:29 PM</span><button class="power" title="Restart" id="restart">⏻</button></div>
+  </header>
+
+  <section class="desktop-icons">
+    <button class="desk-icon" data-app="about"><span class="desk-glyph">◈</span><span>About Me</span></button>
+    <button class="desk-icon" data-app="projects"><span class="desk-glyph cyan">▧</span><span>My Projects</span></button>
+    <button class="desk-icon" data-app="skills"><span class="desk-glyph violet">✳</span><span>Skills</span></button>
+    <button class="desk-icon" data-app="credentials"><span class="desk-glyph gold">◇</span><span>Credentials</span></button>
+    <button class="desk-icon" data-app="terminal"><span class="desk-glyph green">›_</span><span>Terminal</span></button>
+    <button class="desk-icon" data-app="contact"><span class="desk-glyph pink">↗</span><span>Contact</span></button>
+  </section>
+
+  <section class="home-hero">
+    <div class="hero-copy">
+      <div class="widget-kicker"><span class="live-dot"></span> YOUR WORKSPACE IS READY <span class="hero-index">HOME / 001</span></div>
+      <div class="hero-overline">HELLO, I'M</div>
+      <h1>Abir<br><em>Agarwal.</em></h1>
+      <p class="hero-description">Computer Science student exploring <b>AI, software, and creative problem-solving.</b> I like turning curiosity into things people can actually use.</p>
+      <div class="widget-tags"><span>AI / ML</span><span>PYTHON</span><span>SOFTWARE</span><span>AUTOMATION</span></div>
+      <div class="hero-actions">
+        <button class="hero-primary" data-app="projects">Explore my projects <span>↗</span></button>
+        <button class="hero-secondary" data-app="about">A little about me <span>＋</span></button>
+      </div>
+      <div class="hero-foot"><span><i class="live-dot"></i> OPEN TO LEARNING & COLLABORATION</span><span>CHENNAI, INDIA</span></div>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="orbit orbit-three"></div>
+      <div class="orbit-core"><span>A</span><small>ABIR.OS</small></div>
+      <div class="orbit-node node-ai"><b>AI</b><small>INTELLIGENCE</small></div>
+      <div class="orbit-node node-code"><b>{ }</b><small>CODE</small></div>
+      <div class="orbit-node node-build"><b>✳</b><small>BUILD</small></div>
+      <div class="orbit-label label-top">THINK <span>·</span> BUILD <span>·</span> ITERATE</div>
+      <div class="orbit-label label-bottom">CURIOUS BY DEFAULT <span>✦</span> BUILDER BY CHOICE</div>
+      <a class="featured-build" href="https://github.com/AbirAgarwal/NOVA" target="_blank" rel="noreferrer"><small>FEATURED BUILD</small><b>Nova <span>↗</span></b><p>Voice assistant · Python</p></a>
+    </div>
+  </section>
+
+
+
+
+
+  <div class="home-status-strip">
+    <div><span class="strip-star">✳</span><b>A workspace built around curiosity.</b><small>Take a look around. There's more than one way to explore.</small></div>
+    <div class="strip-stat"><small>EDUCATION</small><b>SRMIST · CSE (AI/ML)</b></div>
+    <div class="strip-stat"><small>STATUS</small><b><i class="live-dot"></i> LEARNING & BUILDING</b></div>
+  </div>
+  <div id="windowLayer"></div>
+
+  <div class="launcher hidden" id="launcher">
+    <div class="launcher-head"><div><small>APPLICATIONS</small><h2>Workspace</h2></div><button id="closeLauncher">×</button></div>
+    <div class="launcher-search">⌕ <span>Choose an application</span></div>
+    <div class="launcher-grid">
+      <button data-app="about"><i>◈</i>About</button><button data-app="projects"><i class="cyan">▧</i>Projects</button>
+      <button data-app="skills"><i class="violet">✳</i>Skills</button><button data-app="credentials"><i class="gold">◇</i>Credentials</button>
+      <button data-app="github"><i>⌘</i>GitHub</button><button data-app="terminal"><i class="green">›_</i>Terminal</button>
+      <button data-app="contact"><i class="pink">↗</i>Contact</button>
+    </div>
+    <div class="launcher-footer">ABIR.OS <span>PERSONAL DEVELOPER SYSTEM</span></div>
+  </div>
+
+  <nav class="dock">
+    <button class="dock-launch" id="dockLauncher" title="Applications">A</button><span class="dock-sep"></span>
+    <button class="dock-app" data-app="about" title="About">◈</button>
+    <button class="dock-app" data-app="projects" title="Projects">▧</button>
+    <button class="dock-app" data-app="skills" title="Skills">✳</button>
+    <button class="dock-app" data-app="terminal" title="Terminal">›_</button>
+    <button class="dock-app" data-app="contact" title="Contact">↗</button>
+    <span class="dock-spacer"></span><div class="dock-now"><span class="live-dot"></span><span id="dockClock">11:29 PM</span></div>
+  </nav>
+</main>
+<script src="script.js"></script>
+</body></html>
