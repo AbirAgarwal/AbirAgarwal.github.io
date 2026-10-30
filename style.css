@@ -203,3 +203,23 @@ button{font:inherit;color:inherit;cursor:pointer;border:0}.hidden{display:none!i
   .launcher { position: fixed; left: 4%; width: 92%; bottom: 84px; }
   .window { position: fixed; width: 92vw !important; height: min(68vh, 620px) !important; left: 4% !important; top: 14% !important; }
 }
+
+
+/* v9: force a compact, vertically stacked phone layout */
+@media screen and (max-width: 760px) {
+  html, body { width: 100% !important; height: auto !important; min-height: 100% !important; overflow-x: hidden !important; overflow-y: auto !important; }
+  #desktop.desktop { display: block !important; position: relative !important; width: 100% !important; height: auto !important; min-height: 100vh !important; overflow: visible !important; padding: 0 0 105px !important; }
+  .topbar { position: relative !important; width: 100% !important; height: 58px !important; min-height: 58px !important; padding: 0 12px !important; overflow: hidden !important; }
+  .top-left { flex: 1 1 auto !important; min-width: 0 !important; gap: 8px !important; }
+  .top-left .top-divider, .top-left .top-menu, .top-center,
+  .top-right .wifi, .top-right #topDate, .top-right .top-divider { display: none !important; }
+  .top-right { flex: 0 0 auto !important; margin-left: auto !important; }
+  .desktop-icons { position: relative !important; inset: auto !important; width: auto !important; margin: 22px 16px 0 !important; padding: 0 !important; display: grid !important; grid-template-columns: repeat(3, minmax(0, 1fr)) !important; grid-auto-flow: row !important; gap: 18px 8px !important; }
+  .desk-icon { position: static !important; min-width: 0 !important; width: auto !important; }
+  .home-hero { position: relative !important; inset: auto !important; width: auto !important; height: auto !important; min-height: 0 !important; margin: 34px 20px 30px !important; display: block !important; }
+  .hero-copy { width: 100% !important; max-width: none !important; padding: 0 !important; }
+  .hero-copy h1 { font-size: clamp(46px, 12vw, 60px) !important; line-height: .98 !important; }
+  .hero-description { font-size: 13px !important; line-height: 1.7 !important; }
+  .hero-art, .home-status-strip, .desktop-hint { display: none !important; }
+  .dock { position: fixed !important; left: 50% !important; bottom: max(10px, env(safe-area-inset-bottom)) !important; transform: translateX(-50%) !important; width: max-content !important; max-width: calc(100vw - 20px) !important; }
+}
